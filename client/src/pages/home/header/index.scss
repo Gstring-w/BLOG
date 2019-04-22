@@ -1,0 +1,35 @@
+@import "../../../status/variable.scss";
+
+.headerBar {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 47px;
+  &-logo,
+  &-nav,
+  &-login {
+    display: inline-block;
+  }
+  &-nav {
+    height: 48px;
+  }
+  &-login {
+    float: right;
+  }
+}
+
+.fade {
+  transform: translateY(-50%);
+  transition: all 0.4s cubic-bezier(0.57, 0.04, 0.28, 1.15);
+}
+
+@media screen and (max-width: 530px) {
+  .headerBar-login {
+    display: none;
+  }
+  .headerBar-logo {
+    display: none;
+  }
+}

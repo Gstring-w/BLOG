@@ -1,0 +1,18 @@
+@import "../../status/variable.scss";
+.home-article {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  &-content {
+    flex: 7;
+  }
+  &-right {
+    flex: 2;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .home-article-right {
+    display: none;
+  }
+}

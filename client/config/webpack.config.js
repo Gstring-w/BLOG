@@ -18,8 +18,7 @@ const fs = require("fs");
 
 // html-webpack-plugin 插件的loading
 const loading = {
-  html: fs.readFileSync(path.resolve(__dirname, "../src/assets/loading.html")),
-  css: fs.readFileSync(path.resolve(__dirname, "../src/assets/normaliza.css"))
+  html: fs.readFileSync(path.resolve(__dirname, "../src/assets/loading.html"))
 };
 
 // 以文件的方式输出css文件
@@ -107,7 +106,7 @@ module.exports = function(env = {}, argv) {
         {
           test: /\.scss/,
           use: [
-            MiniCssExtractPlugin.loader,
+            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
             "css-loader",
             {
               loader: "postcss-loader",

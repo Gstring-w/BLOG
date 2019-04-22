@@ -2,3 +2,13 @@ $fontSize: 14px;
 $color: #007fff;
 $contentColor: #fff;
 $bgColor: #eee;
+
+.wrapper {
+  width: 100%;
+  background-color: $contentColor;
+}
+
+html,
+body {
+  background-color: $bgColor;
+}
