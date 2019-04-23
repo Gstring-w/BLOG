@@ -1,0 +1,8 @@
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  .ant-tag {
+    margin: 4px;
+  }
+}

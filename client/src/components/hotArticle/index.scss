@@ -1,0 +1,19 @@
+.article-list {
+  background-color: #fff;
+  padding: 0px 10px !important;
+  border-radius: 3px;
+  margin-bottom: 30px !important;
+  margin-top: 10px !important;
+  .ant-list-item-meta-title {
+    font-weight: 600;
+    font-size: 12px !important;
+    height: 18px;
+  }
+  .ant-list-item-meta-description {
+    font-size: 10px;
+  }
+
+  .ant-list-item-meta {
+    margin-bottom: -16px !important;
+  }
+}

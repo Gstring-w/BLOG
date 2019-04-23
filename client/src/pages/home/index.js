@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import HeaderBar from "./header";
-import Content from "./content";
-import FooterPage from "./footer";
+import RightContent from "./rightContent";
+import SecendRoute from "../../routes/secondRoute";
 import "./index.scss";
 export default class Home extends Component {
   render() {
@@ -12,13 +12,12 @@ export default class Home extends Component {
         </header>
         <article className="home-article">
           <section className="home-article-content">
-            <Content />
+            <SecendRoute />
           </section>
-          <section className="home-article-right">这是右边信息</section>
+          <section className="home-article-right">
+            <RightContent />
+          </section>
         </article>
-        <footer className="home-footer">
-          <FooterPage />
-        </footer>
       </>
     );
   }
