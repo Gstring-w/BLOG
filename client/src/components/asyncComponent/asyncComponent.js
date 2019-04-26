@@ -1,5 +1,5 @@
-import React, { Component,createElement } from "react";
-import pageAnout from "./pageAbout";
+import React, { Component, createElement } from "react";
+
 function asyncComponent(load) {
   return class AsyncComponent extends Component {
     state = {
@@ -7,7 +7,6 @@ function asyncComponent(load) {
     };
     componentDidMount() {
       load().then(({ default: component }) => {
-        console.log(pageAnout);
         this.setState({
           component
         });

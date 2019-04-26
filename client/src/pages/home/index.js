@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import Sketlon from "../../components/SkeletonHome";
 import HeaderBar from "./header";
 import RightContent from "./rightContent";
-import SecendRoute from "../../routes/secondRoute";
+import Router from "../../routes";
 import "./index.scss";
 export default class Home extends Component {
   render() {
@@ -12,7 +13,7 @@ export default class Home extends Component {
         </header>
         <article className="home-article">
           <section className="home-article-content">
-            <SecendRoute />
+            <Router />
           </section>
           <section className="home-article-right">
             <RightContent />

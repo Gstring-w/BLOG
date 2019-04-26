@@ -35,7 +35,7 @@ export default class RightContent extends Component {
   render() {
     const { tags, data } = this.state;
     return (
-      <div>
+      <div className="animate">
         <div className="tags">
           <Tags tags={tags} />
         </div>

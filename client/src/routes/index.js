@@ -1,19 +1,24 @@
 import React, { Component } from "react";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import Home from "../pages/home";
-import Login from "../pages/login";
-import NotFound from "../pages/404";
-import "../status/normaliza.scss";
-export default class _Router extends Component {
+import { Route, Switch } from "react-router-dom";
+import asyncComponent from "../components/asyncComponent/asyncComponent";
+import ContentHome from "../components/contentHome";
+// import AboutContent from "../components/contentAbout";
+export default class secondRoute extends Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/404" component={NotFound} />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route path="/" exact component={ContentHome} />
+        <Route
+          path="/about"
+          exact
+          component={asyncComponent(() => import("../components/contentAbout"))}
+        />
+        <Route
+          path="/nav"
+          exact
+          component={asyncComponent(() => import("../components/contentAbout"))}
+        />
+      </Switch>
     );
   }
 }

@@ -3,9 +3,13 @@ import HeaderMenu from "./menu";
 import Logo from "./logo";
 import Login from "./login";
 import "./index.scss";
-export default class HeaderBar extends Component {
+class HeaderBar extends Component {
   componentDidMount() {
-    this.dom.style.transform = `translateY(0)`;
+    setTimeout(() => {
+      this.dom.style.opacity = 1;
+      this.dom.style.transform = `translateY(0)`;
+    }, 0);
+
     this.checkWidth();
   }
 
@@ -50,10 +54,12 @@ export default class HeaderBar extends Component {
             />
           </div>
           <div className="headerBar-login">
-            <Login />
+            <Login isLogin={true} />
           </div>
         </div>
       </div>
     );
   }
 }
+
+export default HeaderBar;
