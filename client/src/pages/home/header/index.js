@@ -3,6 +3,7 @@ import HeaderMenu from "./menu";
 import Logo from "./logo";
 import Login from "./login";
 import "./index.scss";
+
 class HeaderBar extends Component {
   componentDidMount() {
     setTimeout(() => {
@@ -44,7 +45,9 @@ class HeaderBar extends Component {
       >
         <div className="headerBar">
           <div className="headerBar-logo">
-            <Logo />
+            <a href="/">
+              <Logo />
+            </a>
           </div>
           <div className="headerBar-nav">
             <HeaderMenu

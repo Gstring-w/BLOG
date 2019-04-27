@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Affix, BackTop } from "antd";
 import Sketlon from "../../components/SkeletonHome";
 import HeaderBar from "./header";
 import RightContent from "./rightContent";
@@ -8,9 +9,11 @@ export default class Home extends Component {
   render() {
     return (
       <>
-        <header className="home-header">
-          <HeaderBar />
-        </header>
+        <Affix>
+          <header className="home-header">
+            <HeaderBar />
+          </header>
+        </Affix>
         <article className="home-article">
           <section className="home-article-content">
             <Router />
@@ -19,6 +22,7 @@ export default class Home extends Component {
             <RightContent />
           </section>
         </article>
+        <BackTop />
       </>
     );
   }
