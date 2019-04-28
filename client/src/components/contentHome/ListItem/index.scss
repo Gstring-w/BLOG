@@ -1,0 +1,15 @@
+.content-wrapper {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px;
+}
+.listItem-wrapper-content {
+  .listItem-image-wrapper {
+    display: flex;
+    justify-content: space-between;
+    div {
+      flex: 1;
+      border: 1px solid #fff;
+    }
+  }
+}

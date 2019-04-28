@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import asyncComponent from "../components/asyncComponent/asyncComponent";
 import ContentHome from "../components/contentHome";
-// import AboutContent from "../components/contentAbout";
+
+import NotFound from "../pages/404";
 export default class secondRoute extends Component {
   render() {
     return (

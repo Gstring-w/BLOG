@@ -6,11 +6,8 @@ import "./index.scss";
 
 class HeaderBar extends Component {
   componentDidMount() {
-    setTimeout(() => {
-      this.dom.style.opacity = 1;
-      this.dom.style.transform = `translateY(0)`;
-    }, 0);
-
+    this.dom.style.animationName = "fadeInDown";
+    this.dom.style.animationDuration = 1 + "s";
     this.checkWidth();
   }
 
@@ -38,7 +35,7 @@ class HeaderBar extends Component {
     let { current, isPc } = this.state;
     return (
       <div
-        className="wrapper fade"
+        className="wrapper"
         ref={dom => {
           this.dom = dom;
         }}
