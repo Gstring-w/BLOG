@@ -1,3 +1,9 @@
+.home-header {
+  width: 100%;
+}
+.home-article-content {
+  width: 100%;
+}
 @import "../../status/variable.scss";
 .home-article {
   display: flex;
@@ -17,6 +23,7 @@
   }
   .home-article {
     width: 99%;
+    overflow: auto;
   }
 }
 

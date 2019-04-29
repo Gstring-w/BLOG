@@ -1,12 +1,14 @@
 import React from "react";
-import { Tag } from "antd";
+import { Tag, Divider } from "antd";
 import "./index.scss";
 
 function OneImage(props) {
   return (
-    <div className="listItem-wrapper-content">
-      <p>{props.data.content}</p>
-      <img src={props.data.imgs[0]} alt="" />
+    <div className="listItem-wrapper-content-one">
+      <p className="article">{props.data.content}</p>
+      <div className="article-img-wrapper">
+        <img src={props.data.imgs[0]} alt="" />
+      </div>
     </div>
   );
 }
@@ -24,8 +26,8 @@ function ThreeImage(props) {
     <div className="listItem-wrapper-content">
       <p>{props.data.content}</p>
       <div className="listItem-image-wrapper">
-        {props.data.imgs.map(item => (
-          <div key={item}>
+        {props.data.imgs.map((item, index) => (
+          <div key={index} className="img-wrap">
             <img src={item} alt="" />
           </div>
         ))}
@@ -45,18 +47,17 @@ export default function ListItem(props) {
       <a href={props.data.href}>
         <div className="listItem-wrapper-title">{props.data.title}</div>
       </a>
-      {hashImg[0](props)}
-      {hashImg[1](props)}
-      {hashImg[3](props)}
+      {hashImg[props.data.imgs.length](props)}
       <div className="listItem-wrapper-tags">
         <Tag>Tags：</Tag>
         {props.data.isHot ? <Tag color="magenta">热门</Tag> : ""}
-        {props.data.tags.map(item => (
-          <Tag color="green" key={item}>
+        {props.data.tags.map((item, index) => (
+          <Tag color="green" key={index}>
             {item}
           </Tag>
         ))}
       </div>
+      <Divider />
     </div>
   );
 }
