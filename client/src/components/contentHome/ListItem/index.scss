@@ -6,6 +6,18 @@
 
 .listItem-wrapper {
   margin: 10px 0px;
+  .hot-info {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .authorInfo {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    color: #1890ff;
+    font-size: 10px;
+  }
 }
 .listItem-wrapper-content {
   .listItem-image-wrapper {

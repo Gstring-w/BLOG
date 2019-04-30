@@ -19,14 +19,11 @@ export default class index extends Component {
     window.addEventListener(
       "scroll",
       e => {
-        // console.log(window.pageYOffset, root.clientHeight);
         if (
           lock &&
           document.documentElement.clientHeight + window.pageYOffset >=
             root.clientHeight
         ) {
-          console.log(1111);
-
           lock = false;
           axios.getBlogData().then(result => {
             if (result.status == 200) {
@@ -57,7 +54,7 @@ export default class index extends Component {
   };
   animate = () => {
     this.wrap.style.animationName = "fadeIn";
-    this.wrap.style.animationDuration = 3 + "s";
+    this.wrap.style.animationDuration = 1.5 + "s";
   };
   render() {
     let { data } = this.state;

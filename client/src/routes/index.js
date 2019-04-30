@@ -1,25 +1,27 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import asyncComponent from "../components/asyncComponent/asyncComponent";
+import contentDetails from "../components/contentDetails";
 import ContentHome from "../components/contentHome";
-
-import NotFound from "../pages/404";
 export default class secondRoute extends Component {
   render() {
     return (
-      <Switch>
+      <>
         <Route path="/" exact component={ContentHome} />
         <Route
           path="/about"
           exact
           component={asyncComponent(() => import("../components/contentAbout"))}
         />
+
         <Route
           path="/nav"
           exact
           component={asyncComponent(() => import("../components/contentAbout"))}
         />
-      </Switch>
+
+        <Route path="/details/:id" component={contentDetails} />
+      </>
     );
   }
 }
