@@ -1,5 +1,6 @@
 import React from "react";
 import { Tag, Divider } from "antd";
+import LazyImage from "../../lazyImage";
 import "./index.scss";
 
 function OneImage(props) {
@@ -7,7 +8,7 @@ function OneImage(props) {
     <div className="listItem-wrapper-content-one">
       <p className="article">{props.data.content}</p>
       <div className="article-img-wrapper">
-        <img src={props.data.imgs[0]} alt="" />
+        <LazyImage url={props.data.imgs[0]} />
       </div>
     </div>
   );
@@ -28,7 +29,7 @@ function ThreeImage(props) {
       <div className="listItem-image-wrapper">
         {props.data.imgs.map((item, index) => (
           <div key={index} className="img-wrap">
-            <img src={item} alt="" />
+            <LazyImage url={item} />
           </div>
         ))}
       </div>
@@ -43,7 +44,7 @@ let hashImg = {
 
 export default function ListItem(props) {
   return (
-    <div className="listItem-wrapper">
+    <div className="listItem-wrapper bounceInUp">
       <a href={props.data.href}>
         <div className="listItem-wrapper-title">{props.data.title}</div>
       </a>

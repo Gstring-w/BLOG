@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ListItem from "./ListItem";
+import { Spin } from "antd";
 import * as axios from "../../axios";
 import "./index.scss";
 export default class index extends Component {
@@ -9,14 +10,41 @@ export default class index extends Component {
   componentDidMount() {
     this.animate();
     this.loadData();
+    this.scrollLoad();
+  }
+
+  scrollLoad = () => {
+    var root = document.getElementById("root");
+    var lock = true;
     window.addEventListener(
       "scroll",
       e => {
-        console.log(window.pageYOffset, this.wrap.clientHeight, window.screen);
+        // console.log(window.pageYOffset, root.clientHeight);
+        if (
+          lock &&
+          document.documentElement.clientHeight + window.pageYOffset >=
+            root.clientHeight
+        ) {
+          console.log(1111);
+
+          lock = false;
+          axios.getBlogData().then(result => {
+            if (result.status == 200) {
+              this.setState(
+                state => {
+                  return { data: state.data.concat(result.data.data) };
+                },
+                () => {
+                  lock = true;
+                }
+              );
+            }
+          });
+        }
       },
       "false"
     );
-  }
+  };
 
   loadData = () => {
     axios.getBlogData().then(data => {
@@ -47,10 +75,9 @@ export default class index extends Component {
           data.map((item, index) => {
             return <ListItem data={item} key={index} />;
           })}
-        {data.length !== 0 &&
-          data.map((item, index) => {
-            return <ListItem data={item} key={index} />;
-          })}
+        <div className="loading_bar">
+          <Spin />
+        </div>
       </div>
     );
   }
